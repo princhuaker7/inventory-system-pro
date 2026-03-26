@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Inventory System PRO</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Inventory System PRO</h1>
+
+    <div class="form-section">
+      <h2>Agregar producto</h2>
+      <form id="productForm">
+        <input type="hidden" id="productId">
+        <input type="text" id="name" placeholder="Nombre del producto" required>
+        <input type="text" id="category" placeholder="Categoría" required>
+        <input type="number" id="price" placeholder="Precio" step="0.01" min="0" required>
+        <input type="number" id="stock" placeholder="Stock" min="0" required>
+        <button type="submit">Guardar producto</button>
+      </form>
+      <p id="message"></p>
+    </div>
+
+    <div class="search-section">
+      <h2>Buscar producto</h2>
+      <input type="text" id="searchInput" placeholder="Buscar por nombre">
+      <button onclick="searchProducts()">Buscar</button>
+      <button onclick="loadProducts()">Mostrar todos</button>
+    </div>
+
+    <div class="table-section">
+      <h2>Lista de productos</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Nombre</th>
+            <th>Categoría</th>
+            <th>Precio</th>
+            <th>Stock</th>
+            <th>Estado</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
+        <tbody id="productTableBody"></tbody>
+      </table>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
